@@ -29,6 +29,7 @@ ext {
 
 dependencies {
 	compile('org.springframework.cloud:spring-cloud-stream-binder-kafka')
+	compile('joda-time:joda-time:2.9.9')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

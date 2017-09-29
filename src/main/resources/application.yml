@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        sample-source:
+          destination: testtock
+        input:
+          destination: testtock
+        output:
+          destination: "market_data"
+          content-type: application/json
+        sample-sink:
+          destination: xformed
