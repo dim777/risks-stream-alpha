@@ -29,6 +29,10 @@ ext {
 
 dependencies {
 	compile('org.springframework.cloud:spring-cloud-stream-binder-kafka')
+	compile('org.springframework.cloud:spring-cloud-stream-reactive')
+	compile('io.projectreactor:reactor-core:3.0.7.RELEASE')
+	compile('org.springframework.cloud:spring-cloud-stream-schema')
+	compile('org.apache.avro:avro:1.8.2')
 	compile('joda-time:joda-time:2.9.9')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')

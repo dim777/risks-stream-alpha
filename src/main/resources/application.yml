@@ -11,3 +11,32 @@ spring:
           content-type: application/json
         sample-sink:
           destination: xformed
+
+server:
+  port: 8082
+spring:
+  application:
+    name: stream-processing
+  cloud:
+    stream:
+      schemaRegistryClient:
+        endpoint: "10.45.230.116:8081"
+        cached: true
+      kafka:
+        binder:
+          brokers: "10.45.230.116, 10.45.230.115, 10.45.230.110"
+          defaultBrokerPort: 9092
+          zkNodes: "10.45.230.116, 10.45.230.115, 10.45.230.110"
+          defaultZkPort: 2081
+        bindings:
+          input:
+            consumer:
+              configuration:
+                key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+                value.deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      bindings:
+        output:
+          destination: transformed
+          #contentType: application/*+avro
+        input:
+          destination: cdckafka.biskafka.sourcedb.sdalluni.sddu
